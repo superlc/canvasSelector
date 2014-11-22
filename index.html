@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>测试isPointInPath函数</title>
+	</head>
+	<body>
+		<canvas id="demo" width="800" height="600"></canvas>
+		<script type="text/javascript" src="trigger.js"></script>
+		<script type="text/javascript">
+			var canvas = document.getElementById('demo');
+			var points1 = [
+				{
+					x : 20,
+					y : 40
+				},
+				{
+					x : 200,
+					y : 80
+				},
+				{
+					x : 50,
+					y : 200
+				},
+				{
+					x : 600,
+					y : 400
+				},
+				{
+					x : 300,
+					y : 150
+				}
+			];
+			var points2 = [
+				{
+					x : 200,
+					y : 200
+				},
+				{
+					x : 400,
+					y : 320
+				},
+				{
+					x : 600,
+					y : 500
+				}
+			];
+			var stage = new Stage(canvas,800,600);
+			stage.addPath(new Path(points1,'red'));
+			stage.addPath(new Path(points2,'blue'));
+			stage.draw();
+			stage.listenClick(function(p){
+				console.log(p.style);
+			});
+		</script>
+	</body>
+</html>
